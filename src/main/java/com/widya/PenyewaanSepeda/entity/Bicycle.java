@@ -1,5 +1,4 @@
 package com.widya.PenyewaanSepeda.entity;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
