@@ -34,15 +34,6 @@ public class AccountImpl implements UserDetailsService,AccountService {
          //   account.getPassword();
     }
 
-    @Override
-    public String getAccountRole(String username) {
-        return null;
-    }
-
-    @Override
-    public Boolean checkExistingAccount(String username) {
-        return null;
-    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
