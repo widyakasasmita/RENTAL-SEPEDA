@@ -2,13 +2,17 @@ package com.widya.PenyewaanSepeda.entity;
 
 
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import javax.persistence.Column;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class MyAccountDetails  {//implements UserDetails {
-/*
+public class MyAccountDetails  implements UserDetails {
+
 
     private String username;
     private String password;
@@ -54,5 +58,5 @@ public class MyAccountDetails  {//implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
-*/
+
 }

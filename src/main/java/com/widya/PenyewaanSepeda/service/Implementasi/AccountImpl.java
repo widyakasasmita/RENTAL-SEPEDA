@@ -8,11 +8,15 @@ import com.widya.PenyewaanSepeda.entity.MyAccountDetails;
 import com.widya.PenyewaanSepeda.service.abstraction.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AccountImpl{// implements AccountService  , UserDetailsService {
-/*
+public class AccountImpl implements UserDetailsService,AccountService {
+
 
     @Autowired
     private AccountRepository accountRepository;
@@ -27,6 +31,7 @@ public class AccountImpl{// implements AccountService  , UserDetailsService {
                     dto.getRole()
             );
             accountRepository.save(account);
+         //   account.getPassword();
     }
 
     @Override
@@ -41,9 +46,10 @@ public class AccountImpl{// implements AccountService  , UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-       Account account = accountRepository.findByUsername(username)
-               .orElseThrow(() -> new UsernameNotFoundException("Username tidak ditemukan"));
+        Account account = accountRepository.findByUsername(username)
+                .orElseThrow(()-> new UsernameNotFoundException("Usernam tidak ditemukan"));
         return new MyAccountDetails(account);
     }
-*/
+
+
 }

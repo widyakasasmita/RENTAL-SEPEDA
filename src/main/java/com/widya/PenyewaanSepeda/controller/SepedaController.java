@@ -4,12 +4,14 @@ import com.widya.PenyewaanSepeda.service.abstraction.BicycleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 
 
 @RestController
+@CrossOrigin
 @RequestMapping("/api/sepeda")
 public class SepedaController {
 
@@ -17,6 +19,7 @@ public class SepedaController {
     private BicycleService bicycleService;
 
     @GetMapping("/index")
+
     public ResponseEntity<Object> getGrid (@RequestParam(defaultValue = "")String sepedaId,
                                            @RequestParam(defaultValue = "1")Integer page){
         try{
